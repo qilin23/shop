@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <!-- 背景颜色 -->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <!-- 背景圆 -->
+            <div class="circle" style="--x:0"></div>
+            <div class="circle" style="--x:1"></div>
+            <div class="circle" style="--x:2"></div>
+            <div class="circle" style="--x:3"></div>
+            <div class="circle" style="--x:4"></div>
+            <!-- 登录框 -->
+            <div class="container">
+                <div class="form">
+        <h2>注册</h2>
+    <form action="/register" method="post">
+        <div class="inputBox">
+            填写用户名：<input type="text" name="name" required=""/>
+        </div>
+
+        <div class="inputBox">
+            填写密码：<input type="password" name="pass" required=""/>
+        </div>  
+
+        <div class="inputBox">
+            电子邮箱：<input type="mail" name="mail"/>
+        </div>
+
+        <div class="inputBox">
+            性别：<input type="sex" name="sex"/>
+        </div>   
+
+        <div class="inputBox">
+            爱好：<input type="hobby" name="hobby"/>
+        </div>
+
+        <div class="inputBox">
+            班级：<input type="classes" name="classes"/>
+        </div>  
+
+    <div class="inputBox">
+        <input type="submit" value="确定"/>
+    </div>
+    </form>
+ </section>
+</body>
+</html>
