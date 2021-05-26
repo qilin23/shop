@@ -17,8 +17,8 @@ router.get('/',function(req,res)  {
 
 router.post('/',(req,res) => {
 
-var selectSQL = "select name,pass from useraccount where name = ? and pass=? " ;
-let a=[req.body.name,req.body.pass]  
+var selectSQL = "select uid,pass from userdetails where uid = ? and pass= ? " ;
+let a=[req.body.uid,req.body.pass]  
 connection.query(selectSQL,a, function (err, result, fields) {
     if (err) {
         console.log('err', err);
@@ -27,12 +27,12 @@ connection.query(selectSQL,a, function (err, result, fields) {
       if (result == undefined){
         res.send('登录失败');
     }else {
-      if (req.body.name =="qilin" && req.body.pass == 000000){
+      if (req.body.name =="023" && req.body.pass == 000000){
 
-          res.redirect('/manager');
+          res.redirect('./manager');
         }else{
       
-         res.redirect('/index');    }
+         res.redirect('./index');    }
     }
   }
 });

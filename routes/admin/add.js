@@ -27,8 +27,8 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
 
-    var insertSql = 'insert into pro_manager(name,phone,juice,shop) values(?,?,?,?)';
-    connection.query(insertSql, [req.body.name,req.body.phone,req.body.juice,req.body.shop], function (err, result, fields) {
+    var insertSql = 'insert into productsinfo(pid,pname,shopprice,costprice,limit) values(?,?,?,?,?)';
+    connection.query(insertSql, [req.body.name,req.body.pname,req.body.shopprice,req.body.costprice,req.body.limit], function (err, result, fields) {
     
         if (err) {
             console.log('err', err);
