@@ -7,15 +7,15 @@ var ejs = require('ejs');
 var session = require('express-session');
  
 
-var loginRouter = require('./routes/login');
-var registerRouter = require('./routes/register');
+var loginRouter = require('./routes/login/login');
+var registerRouter = require('./routes/login/register');
 var indexRouter = require('./routes/index');
-var contactRouter = require('./routes/contact');
-var mensRouter = require('./routes/mens');
-var singleRouter = require('./routes/single');
-var womensRouter = require('./routes/womens');
-var managerRouter = require('./routes/manager');
-var addRouter = require('./routes/add');
+var contactRouter = require('./routes/homepage/contact');
+var mensRouter = require('./routes/homepage/mens');
+var singleRouter = require('./routes/homepage/single');
+var womensRouter = require('./routes/homepage/womens');
+var managerRouter = require('./routes/admin/manager');
+var addRouter = require('./routes/admin/add');
 const { Cookie } = require('express-session');
 
 var app = express();
