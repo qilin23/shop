@@ -7,15 +7,16 @@ var ejs = require('ejs');
 var session = require('express-session');
  
 
-var loginRouter = require('./routes/login/login');
-var registerRouter = require('./routes/login/register');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
 var indexRouter = require('./routes/index');
-var contactRouter = require('./routes/homepage/contact');
-var mensRouter = require('./routes/homepage/mens');
-var singleRouter = require('./routes/homepage/single');
-var womensRouter = require('./routes/homepage/womens');
-var managerRouter = require('./routes/admin/manager');
-var addRouter = require('./routes/admin/add');
+var mensRouter = require('./routes/mens');
+var singleRouter = require('./routes/single');
+var womensRouter = require('./routes/womens');
+var productRouter = require('./routes/product');
+var orderRouter = require('./routes/order');
+var usersRouter = require('./routes/users');
+var addRouter = require('./routes/add');
 const { Cookie } = require('express-session');
 
 var app = express();
@@ -42,12 +43,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/login', loginRouter);
 app.use('/register',registerRouter);
 app.use('/', indexRouter);
-app.use('/contact', contactRouter);
 app.use('/mens', mensRouter);
 app.use('/single', singleRouter);
 app.use('/womens',womensRouter);
-app.use('/manager', managerRouter);
-app.use('/add', addRouter);
+app.use('/product',productRouter);
+app.use('/order',orderRouter);
+app.use('/users',usersRouter);
+app.use('/add',addRouter);
 
 
 // catch 404 and forward to error handler
@@ -63,6 +65,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
+  console.log(err);
   res.render('error');
 });
 

@@ -1,0 +1,36 @@
+let express = require('express');
+let router = express.Router();
+let User = require('./bean/user');
+
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456",
+    database: "shop"
+});
+
+connection.connect();
+
+
+router.get('/',(req,res) => {
+    res.render('register');
+});
+
+router.post('/', (req, res) => {
+
+    var insertSql = 'insert into userdetails(uid,pass,mobile,email,age,idcard,address) values(?,?,?,?,?,?,?)';
+    let a=[req.body.uid,req.body.pass,req.body.mobile,req.body.email,req.body.age,req.body.idcard,req.body.address]
+    connection.query(insertSql,a, function (err, result, fields) {
+    
+        if (err) {
+            console.log('err'+err);
+            return;
+        } else {
+            res.redirect('/login');
+        }
+    });
+});
+
+
+module.exports = router;

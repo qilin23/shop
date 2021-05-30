@@ -2325,11 +2325,11 @@ h3.agileits-icons-title {
     font-weight: 300;
     font-size: 14px;
 }
-.list-group-item {
+.list--item {
     font-weight: 300;
     font-size: 14px;
 }
-li.list-group-item1 {
+li.list--item1 {
     font-size: 14px;
     font-weight: 300;
 }
@@ -2449,10 +2449,10 @@ h1.t-button,h2.t-button,h3.t-button,h4.t-button,h5.t-button {
 	margin-top:0.5em;
 	margin-bottom: 0.5em;
 }
-li.list-group-item1 {
+li.list--item1 {
 	line-height: 2.5em;
 }
-.input-group {
+.input- {
 	margin-bottom: 20px;
 }
 .in-gp-tl{
@@ -2461,7 +2461,7 @@ li.list-group-item1 {
 .in-gp-tb{
 	padding-right:0;
 }
-.list-group {
+.list- {
 	margin-bottom: 48px;
 }
 ol {
@@ -2498,7 +2498,7 @@ h2.typoh2{
 		height: 10px;
 		margin-bottom: 10px;
 	}
-	ol.breadcrumb li,.grid_3 p,ul.list-group li,li.list-group-item1 {
+	ol.breadcrumb li,.grid_3 p,ul.list- li,li.list--item1 {
 		font-size: 14px;
 	}
 	.breadcrumb {
@@ -2520,7 +2520,7 @@ h2.typoh2{
 	.in-gp-tb {
 		padding-right: 1em;
 	}
-	.list-group {
+	.list- {
 		margin-bottom: 20px;
 	}
 }
@@ -2557,7 +2557,7 @@ h2.typoh2{
 	h3.title {
 		font-size: 1.6em;
 	}
-	.alert, p,ol.breadcrumb li, .grid_3 p,.well, ul.list-group li, li.list-group-item1,a.list-group-item {
+	.alert, p,ol.breadcrumb li, .grid_3 p,.well, ul.list- li, li.list--item1,a.list--item {
 		font-size: 13px;
 	}
 	.alert {
@@ -2568,7 +2568,7 @@ h2.typoh2{
 		font-size: 14px;
 		padding: 5px 11px;
 	}
-	.list-group {
+	.list- {
 		margin-bottom: 10px;
 	}
 	.well {
@@ -3540,7 +3540,7 @@ p.w3ls_para {
 	.new-levis {
 		padding: 36px 14px;
 	}
-	.pignose-layerslider .slide-visual .script-wrap,.script-group img {
+	.pignose-layerslider .slide-visual .script-wrap,.script- img {
 		width: 200px;
 		height: 200px;
 	}
@@ -4196,7 +4196,7 @@ p.w3ls_para {
 	.pignose-layerslider .slide-visual {
 		height: 400px;
 	}
-	ul.slide-group img {
+	ul.slide- img {
 		width: 100% !important;
 		height: 400px !important;
 	}
@@ -4385,14 +4385,14 @@ p.w3ls_para {
 	.pignose-layerslider .slide-visual .script-wrap {
 		left:350px;
 	}
-	.pignose-layerslider .slide-visual .script-wrap, .script-group img {
+	.pignose-layerslider .slide-visual .script-wrap, .script- img {
 		width: 150px;
 		height: 150px;
 	}
 	.pignose-layerslider .slide-visual {
 		height: 350px;
 	}
-	ul.slide-group img {
+	ul.slide- img {
 		width: 100% !important;
 		height: 350px !important;
 	}

@@ -1612,7 +1612,7 @@ $.ui.plugin.add("draggable", "connectToSortable", {
 
 					this.instance.isOver = 1;
 					//Now we fake the start of dragging for the sortable instance,
-					//by cloning the list group item, appending it to the sortable and using it as inst.currentItem
+					//by cloning the list  item, appending it to the sortable and using it as inst.currentItem
 					//We can then fire the start event of the sortable with our passed browser event, and our own helper (so it doesn't create a new one)
 					this.instance.currentItem = $(that).clone().removeAttr('id').appendTo(this.instance.element).data("sortable-item", true);
 					this.instance.options._helper = this.instance.options.helper; //Store helper option to later restore it
@@ -1657,7 +1657,7 @@ $.ui.plugin.add("draggable", "connectToSortable", {
 					this.instance._mouseStop(event, true);
 					this.instance.options.helper = this.instance.options._helper;
 
-					//Now we remove our currentItem, the list group clone again, and the placeholder, and animate the helper back to it's original size
+					//Now we remove our currentItem, the list  clone again, and the placeholder, and animate the helper back to it's original size
 					this.instance.currentItem.remove();
 					if(this.instance.placeholder) this.instance.placeholder.remove();
 
@@ -1819,17 +1819,17 @@ $.ui.plugin.add("draggable", "stack", {
 
 		var o = $(this).data("draggable").options;
 
-		var group = $.makeArray($(o.stack)).sort(function(a,b) {
+		var  = $.makeArray($(o.stack)).sort(function(a,b) {
 			return (parseInt($(a).css("zIndex"),10) || 0) - (parseInt($(b).css("zIndex"),10) || 0);
 		});
-		if (!group.length) { return; }
+		if (!.length) { return; }
 
-		var min = parseInt(group[0].style.zIndex) || 0;
-		$(group).each(function(i) {
+		var min = parseInt([0].style.zIndex) || 0;
+		$().each(function(i) {
 			this.style.zIndex = min + i;
 		});
 
-		this[0].style.zIndex = min + group.length;
+		this[0].style.zIndex = min + .length;
 
 	}
 });
@@ -6827,7 +6827,7 @@ var lastActive, startXPos, startYPos, clickDragged,
 			buttons.button( "refresh" );
 		}, 1 );
 	},
-	radioGroup = function( radio ) {
+	radio = function( radio ) {
 		var name = radio.name,
 			form = radio.form,
 			radios = $( [] );
@@ -6961,7 +6961,7 @@ $.widget( "ui.button", {
 				that.buttonElement.attr( "aria-pressed", "true" );
 
 				var radio = that.element[ 0 ];
-				radioGroup( radio )
+				radio( radio )
 					.not( radio )
 					.map(function() {
 						return $( this ).button( "widget" )[ 0 ];
@@ -7093,7 +7093,7 @@ $.widget( "ui.button", {
 			this._setOption( "disabled", isDisabled );
 		}
 		if ( this.type === "radio" ) {
-			radioGroup( this.element[0] ).each(function() {
+			radio( this.element[0] ).each(function() {
 				if ( $( this ).is( ":checked" ) ) {
 					$( this ).button( "widget" )
 						.addClass( "ui-state-active" )
@@ -7230,7 +7230,7 @@ var instActive;
 
 /* Date picker manager.
    Use the singleton instance of this class, $.datepicker, to interact with the date picker.
-   Settings for (groups of) date pickers are maintained in an instance object,
+   Settings for (s of) date pickers are maintained in an instance object,
    allowing multiple different settings on the same page. */
 
 function Datepicker() {
@@ -8729,21 +8729,21 @@ $.extend(Datepicker.prototype, {
 		var defaultDate = this._getDefaultDate(inst);
 		var html = '';
 		for (var row = 0; row < numMonths[0]; row++) {
-			var group = '';
+			var  = '';
 			this.maxRows = 4;
 			for (var col = 0; col < numMonths[1]; col++) {
 				var selectedDate = this._daylightSavingAdjust(new Date(drawYear, drawMonth, inst.selectedDay));
 				var cornerClass = ' ui-corner-all';
 				var calender = '';
 				if (isMultiMonth) {
-					calender += '<div class="ui-datepicker-group';
+					calender += '<div class="ui-datepicker-';
 					if (numMonths[1] > 1)
 						switch (col) {
-							case 0: calender += ' ui-datepicker-group-first';
+							case 0: calender += ' ui-datepicker--first';
 								cornerClass = ' ui-corner-' + (isRTL ? 'right' : 'left'); break;
-							case numMonths[1]-1: calender += ' ui-datepicker-group-last';
+							case numMonths[1]-1: calender += ' ui-datepicker--last';
 								cornerClass = ' ui-corner-' + (isRTL ? 'left' : 'right'); break;
-							default: calender += ' ui-datepicker-group-middle'; cornerClass = ''; break;
+							default: calender += ' ui-datepicker--middle'; cornerClass = ''; break;
 						}
 					calender += '">';
 				}
@@ -8810,9 +8810,9 @@ $.extend(Datepicker.prototype, {
 				}
 				calender += '</tbody></table>' + (isMultiMonth ? '</div>' +
 							((numMonths[0] > 0 && col == numMonths[1]-1) ? '<div class="ui-datepicker-row-break"></div>' : '') : '');
-				group += calender;
+				 += calender;
 			}
-			html += group;
+			html += ;
 		}
 		html += buttonPanel + ($.ui.ie6 && !inst.inline ?
 			'<iframe src="javascript:false;" class="ui-datepicker-cover" frameborder="0"></iframe>' : '');

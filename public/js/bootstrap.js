@@ -376,7 +376,7 @@ if (typeof jQuery === 'undefined') {
     if (pos > (this.$items.length - 1) || pos < 0) return
 
     if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
-    if (activeIndex == pos) return this.pause().cycle()
+    if (activeIndex == pos) return this.pa.cycle()
 
     return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
   }
@@ -423,7 +423,7 @@ if (typeof jQuery === 'undefined') {
 
     this.sliding = true
 
-    isCycling && this.pause()
+    isCycling && this.pa
 
     if (this.$indicators.length) {
       this.$indicators.find('.active').removeClass('active')

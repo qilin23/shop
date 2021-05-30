@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Go购商城后台管理系统</title>
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/ht_style.css"/>
+</head>
+<body>
+<!--头部-->
+<header class="publicHeader">
+    <h1>Go购商城后台管理系统</h1>
+
+    <div class="publicHeaderR">
+        <p><span>下午好！</span><span style="color: #fff21b"> Admin</span> , 欢迎你！</p>
+        <a href="./login">退出</a>
+    </div>
+</header>
+<!--时间-->
+<section class="publicTime">
+    <span id="time">2021年1月1日 11:11  星期一</span>
+ 
+</section>
+<!--主体内容-->
+<section class="publicMian ">
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="./orderList">订单管理</a></li>
+                <li ><a href="./productList">商品管理</a></li>
+                <li id="active"><a href="./userList">用户管理</a></li>
+                <li><a href="./password">密码修改</a></li>
+                <li><a href="./login">退出系统</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>账单管理页面 >> 信息查看</span>
+        </div>
+        <div class="productView">
+            <p><strong>订单ID：</strong><span>PRO-001</span></p>
+            <p><strong>用户ID：</strong><span>001</span></p>
+            <p><strong>商品Id：</strong><span>001</span></p>
+            <p><strong>下单时间：</strong><span>2021-5-30</span></p>
+            <p><strong>总金额：</strong><span>680</span></p>
+            <p><strong>运费：</strong><span>0</span></p>
+            <p><strong>是否付款：</strong><span>已付款</span></p>
+
+            <a href="./orderList">返回</a>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+</footer>
+<script src="js/time.js"></script>
+
+</body>
+</html>
