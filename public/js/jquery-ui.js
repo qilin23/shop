@@ -1819,20 +1819,20 @@ $.ui.plugin.add("draggable", "stack", {
 
 		var o = $(this).data("draggable").options;
 
-		var  = $.makeArray($(o.stack)).sort(function(a,b) {
-			return (parseInt($(a).css("zIndex"),10) || 0) - (parseInt($(b).css("zIndex"),10) || 0);
-		});
-		if (!.length) { return; }
+// 		var  = $.makeArray($(o.stack)).sort(function(a,b) {
+// 			return (parseInt($(a).css("zIndex"),10) || 0) - (parseInt($(b).css("zIndex"),10) || 0);
+// 		});
+// 		if (!.length) { return; }
 
-		var min = parseInt([0].style.zIndex) || 0;
-		$().each(function(i) {
-			this.style.zIndex = min + i;
-		});
+// 		var min = parseInt([0].style.zIndex) || 0;
+// 		$().each(function(i) {
+// 			this.style.zIndex = min + i;
+// 		});
 
-		this[0].style.zIndex = min + .length;
+// 		this[0].style.zIndex = min + .length;
 
-	}
-});
+// 	}
+// });
 
 $.ui.plugin.add("draggable", "zIndex", {
 	start: function(event, ui) {
@@ -8729,7 +8729,7 @@ $.extend(Datepicker.prototype, {
 		var defaultDate = this._getDefaultDate(inst);
 		var html = '';
 		for (var row = 0; row < numMonths[0]; row++) {
-			var  = '';
+			// var  = '';
 			this.maxRows = 4;
 			for (var col = 0; col < numMonths[1]; col++) {
 				var selectedDate = this._daylightSavingAdjust(new Date(drawYear, drawMonth, inst.selectedDay));
@@ -14909,4 +14909,4 @@ $.widget( "ui.tooltip", {
 	}
 });
 
-}( jQuery ) );
+}( jQuery );
