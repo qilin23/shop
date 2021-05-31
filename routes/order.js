@@ -1,18 +1,18 @@
 var express = require('express');
 const { render } = require('../app');
 var router = express.Router();
-var db = require("./bean/db");
-router.get("/ordertAdd",function(req,res,next){
+var connection = require("./bean/db");
+router.get("/orderAdd",function(req,res,next){
     res.render("orderAdd");
 })
-router.post("/ordertAdd",function(req,res,next){
+router.post("/orderAdd",function(req,res,next){
     var oid = req.body.oid;
     var uid = req.body.uid;
     var pid = req.body.pid;
     var ordertime = req.body.ordertime;    
     var totalprice = req.body.totalprice;   
     var freight = req.body.freight;
-    db.query("insert into order (oid,uid,pid,ordertime,totalprice,freight) values (?,?,?,?,?,?)",
+    connection.query("insert into order (oid,uid,pid,ordertime,totalprice,freight) values (?,?,?,?,?,?)",
     [oid,uid,pid,ordertime,totalprice,freight],function(err,data){
         if(err){
             console.log(err);
@@ -48,11 +48,12 @@ router.get("/orderList",function(req,res,next){
     //     }
     // })
 })
+
 /*删除部门*/
 router.post("/orderUpdate",function(req,res,next){
-    var orderId = req.body.oid;
+    var oid = req.body.oid;
     var sql = "delete from orderproduct where oid=?";
-    db.query(sql,oid,function(err,data){
+    connection.query(sql,oid,function(err,data){
         if(err){
             console.log(err);
         }
@@ -62,11 +63,11 @@ router.post("/orderUpdate",function(req,res,next){
     })
 })
 
-router.get("/editordert",function(req,res){
+router.get("/editorder",function(req,res){
     /*req.query 里面存储得是get请求的响应参数*/
-    var orderId = req.query.orderId;
+    var oid = req.query.oid;
     var sql = "select * from orderproduct where oid=?";
-    db.query(sql,[oid],function(err,data){
+    connection.query(sql,[oid],function(err,data){
         console.log(data);
         if(err){
             console.log(err);
@@ -77,9 +78,9 @@ router.get("/editordert",function(req,res){
     })
 })
 
-router.get("/getordertlist",function(req,res){
+router.get("/getorderList",function(req,res){
     var sql = "select * from orderproduct";
-    db.query(sql,function(err,data){
+    connection.query(sql,function(err,data){
         if(err){
             console.log(err);
         }
@@ -88,14 +89,14 @@ router.get("/getordertlist",function(req,res){
         }
     })
 })
-router.post("/updateordert",function(req,res){
+router.post("/orderUpdate",function(req,res){
     var oid = req.body.oid;
     var uid = req.body.uid;
     var pid = req.body.pid;
     var ordertime = req.body.ordertime;    
     var totalprice = req.body.totalprice;   
     var freight = req.body.freight;
-    db.query("insert into order (oid,uid,pid,ordertime,totalprice,freight) values (?,?,?,?,?,?)",
+    connection.query("insert into order (oid,uid,pid,ordertime,totalprice,freight) values (?,?,?,?,?,?)",
     [oid,uid,pid,ordertime,totalprice,freight],function(err,data){
         if(err){
             console.log(err);

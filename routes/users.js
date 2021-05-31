@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var db = require("./bean/db");
+var connection = require("./bean/db");
 /* GET users listing. */
 
-router.get('/adduser', function(req, res, next) {
+router.get('/userAdd', function(req, res, next) {
   res.render("userAdd");
 });
 router.post("/userUpdate",function(req,res,next){
     var uid = req.body.uid;
     var sql = "delete from userdetails where uid=?";
-    db.query(sql,uid,function(err,data){
+    connection.query(sql,uid,function(err,data){
         if(err){
             console.log(err);
         }
@@ -32,7 +32,7 @@ router.get("/userList",function(req,res,next){
     end = pagenum*5;
   }
   var sql = "select * ,(select count(*) from userdetails) as count from userdetails limit ?,?";
-  db.query(sql,[start,end],function(err,data){
+  connection.query(sql,[start,end],function(err,data){
     if(err){
       console.log(err);
     }

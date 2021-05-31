@@ -17,6 +17,7 @@ var productRouter = require('./routes/product');
 var orderRouter = require('./routes/order');
 var usersRouter = require('./routes/users');
 var addRouter = require('./routes/add');
+var managerRouter = require('./routes/manager');
 const { Cookie } = require('express-session');
 
 var app = express();
@@ -50,7 +51,7 @@ app.use('/product',productRouter);
 app.use('/order',orderRouter);
 app.use('/users',usersRouter);
 app.use('/add',addRouter);
-
+app.use('/manager',managerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

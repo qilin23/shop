@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var db = require("./bean/db");
+var connection = require("./bean/db");
 router.get("/productAdd",function(req,res,next){
     res.render("productAdd");
 })
 
-router.post("/addproduct",function(req,res,next){
+router.post("/productAdd",function(req,res,next){
     console.log(req.body);
     var  pid = req.body.pid;
     var  pname = req.body. pname;
@@ -13,7 +13,7 @@ router.post("/addproduct",function(req,res,next){
     var  costprice = req.body.costprice;
     var  limit = req.body.limit;
     var sql = "insert into productsinfo (pid,pname,shopprice,costprice,limit) values(?,?,?,?,?)";
-    db.query(sql,[pid,pname,shopprice,costprice,limit],function(err,data){
+    connection.query(sql,[pid,pname,shopprice,costprice,limit],function(err,data){
         if(err){
             console.log(err);
         }
@@ -26,7 +26,7 @@ router.post("/addproduct",function(req,res,next){
 
 router.get("/productList",function(req,res){
     var sql = "select * from productsinfo";
-    db.query(sql,function(err,data){
+    connection.query(sql,function(err,data){
         if(err){
             console.log(err);
         }
@@ -38,7 +38,7 @@ router.get("/productList",function(req,res){
 
 router.get("/allproductList",function(req,res){
     var sql = "select * from productsinfo";
-    db.query(sql,function(err,data){
+    connection.query(sql,function(err,data){
         if(err){
             console.log(err);
         }
